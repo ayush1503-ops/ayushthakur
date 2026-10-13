@@ -1,0 +1,7 @@
+node_modules
+qa
+.git
+.gitignore
+.env*
+.dev.env.json
+README.md
