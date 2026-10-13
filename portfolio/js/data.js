@@ -146,9 +146,12 @@ window.SITE = {
   name: "Ayush Thakur",
   email: "ayusheditor1503@gmail.com",
   linkedin: "https://www.linkedin.com/in/ayush-thakur-a91827419/",
-  // >>> REPLACE with your real WhatsApp number: country code + number, digits only (e.g. "919876543210")
   whatsapp: "919599648246",
-  mailSubject: "New project inquiry — let's build something legendary",
-  mailBody: "Hi Ayush,\n\nI saw your portfolio and I'd love to discuss a project.\n\nProject type: \nBudget: \nTimeline: \n\nLooking forward to hearing from you!",
+  mailSubject: "Project Requirements & Inquiry — Let's connect",
+  mailBody: "Hi Ayush,\n\nI saw your portfolio and would like to connect regarding a project.\n\nHere are the details and requirements:\n• Project / Brand Name:\n• Scope & Requirements (e.g. Website, 3D experience, E-commerce, Portfolio):\n• Timeline & Target Launch Date:\n• Estimated Budget:\n• Reference Links or Inspiration:\n\nLooking forward to hearing from you!\n\nBest regards,",
   waText: "Hi Ayush! I saw your portfolio and I'd like to discuss a project."
 };
+
+export const PROJECTS = window.PROJECTS;
+export const SITE = window.SITE;
+export default { PROJECTS, SITE };

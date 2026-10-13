@@ -130,6 +130,16 @@ import './data.js';
   lb.addEventListener("click", () => lb.classList.remove("on"));
   addEventListener("keydown", (e) => e.key === "Escape" && lb.classList.remove("on"));
 
+  /* contact links: direct Gmail compose */
+  const SITE = window.SITE || {};
+  const enc = encodeURIComponent;
+  const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${enc(SITE.email || "ayusheditor1503@gmail.com")}&su=${enc(SITE.mailSubject || "Project inquiry")}&body=${enc(SITE.mailBody || "")}`;
+  $$("[data-mail], [data-gmail], .nav__cta").forEach((a) => {
+    a.href = gmailUrl;
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+  });
+
   $("#yr").textContent = new Date().getFullYear();
 
   const io = new IntersectionObserver((es) => es.forEach((e) => {

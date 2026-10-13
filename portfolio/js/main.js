@@ -1,3 +1,5 @@
+import './data.js';
+
 (function () {
   const $ = (s, el = document) => el.querySelector(s);
   const $$ = (s, el = document) => [...el.querySelectorAll(s)];
@@ -92,11 +94,15 @@
       </div>`).join("");
   }
 
-  /* ---------- contact links: prefilled email + WhatsApp ---------- */
+  /* ---------- contact links: direct Gmail compose + WhatsApp ---------- */
   const SITE = window.SITE || {};
   const enc = encodeURIComponent;
-  $$("[data-mail]").forEach((a) => {
-    a.href = `mailto:${SITE.email}?subject=${enc(SITE.mailSubject || "Project inquiry")}&body=${enc(SITE.mailBody || "")}`;
+  const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${enc(SITE.email || "ayusheditor1503@gmail.com")}&su=${enc(SITE.mailSubject || "Project inquiry")}&body=${enc(SITE.mailBody || "")}`;
+
+  $$("[data-mail], [data-gmail], .nav__cta").forEach((a) => {
+    a.href = gmailUrl;
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
   });
   $$("[data-wa]").forEach((a) => {
     a.href = `https://wa.me/${SITE.whatsapp}?text=${enc(SITE.waText || "Hi Ayush!")}`;

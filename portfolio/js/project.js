@@ -1,3 +1,5 @@
+import './data.js';
+
 (function () {
   const $ = (s, el = document) => el.querySelector(s);
   const $$ = (s, el = document) => [...el.querySelectorAll(s)];
@@ -127,6 +129,16 @@
   $$("[data-zoom]").forEach((img) => img.addEventListener("click", () => { lbImg.src = img.src; lbImg.alt = img.alt; lb.classList.add("on"); }));
   lb.addEventListener("click", () => lb.classList.remove("on"));
   addEventListener("keydown", (e) => e.key === "Escape" && lb.classList.remove("on"));
+
+  /* contact links: direct Gmail compose */
+  const SITE = window.SITE || {};
+  const enc = encodeURIComponent;
+  const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${enc(SITE.email || "ayusheditor1503@gmail.com")}&su=${enc(SITE.mailSubject || "Project inquiry")}&body=${enc(SITE.mailBody || "")}`;
+  $$("[data-mail], [data-gmail], .nav__cta").forEach((a) => {
+    a.href = gmailUrl;
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+  });
 
   $("#yr").textContent = new Date().getFullYear();
 
