@@ -43,8 +43,8 @@ import './data.js';
           </dl>
           <ul class="stack">${p.stack.map((s) => `<li>${s}</li>`).join("")}</ul>
           <div class="project__actions">
-            <a class="btn" href="project.html?p=${p.id}">CASE FILE <span class="arr">→</span></a>
-            <a class="btn btn--ghost" href="${p.live}" target="_blank" rel="noopener">LIVE SITE <span class="arr">↗</span></a>
+            <a class="btn" href="project.html?p=${p.id}">CASE STUDY & SPECS <span class="arr">→</span></a>
+            <a class="btn btn--ghost" href="${p.live}" target="_blank" rel="noopener">VISIT LIVE SITE <span class="arr">↗</span></a>
           </div>
         </div>
       </article>`).join("");
@@ -57,7 +57,7 @@ import './data.js';
     }));
   }
 
-  /* ---------- skills ---------- */
+  /* ---------- skills with transparent trade-offs ---------- */
   const ico = {
     react: '<circle cx="12" cy="12" r="2"/><ellipse cx="12" cy="12" rx="10" ry="4"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/>',
     next: '<circle cx="12" cy="12" r="10"/><path d="M9 16V8l7 9"/><path d="M15 8v5"/>',
@@ -70,15 +70,15 @@ import './data.js';
     css: '<path d="M4 3l1.6 17L12 22l6.4-2L20 3z"/><path d="M8 8h8l-.5 6-3.5 1-3.5-1-.2-2"/>'
   };
   const skills = [
-    { n: "React", jp: "反応", d: "Component systems and UI that scales from landing pages to apps.", i: "react", used: ["01", "02", "04"] },
-    { n: "Next.js", jp: "次", d: "SSR, routing and SEO-ready builds that ship fast on Vercel.", i: "next", used: ["01"] },
-    { n: "Three.js", jp: "三次元", d: "WebGL scenes, light and depth that turn a page into a world.", i: "three", used: ["02"] },
-    { n: "TypeScript", jp: "型", d: "Typed data and safer refactors. Catalogues the client can edit.", i: "ts", used: ["01"] },
-    { n: "JavaScript", jp: "術", d: "Plain JS when a framework would be overkill. Light and fast.", i: "js", used: ["03"] },
-    { n: "Node", jp: "根", d: "APIs, scripts and the backend that keeps everything running.", i: "node", used: [] },
-    { n: "Python", jp: "蛇", d: "Automation scripts and data chores done in minutes.", i: "python", used: [] },
-    { n: "Motion", jp: "動", d: "Framer Motion and CSS animation that keeps things moving.", i: "motion", used: ["01", "04"] },
-    { n: "CSS", jp: "様式", d: "Layouts, type and responsive systems that hold up on any screen.", i: "css", used: ["01", "02", "03", "04"] }
+    { n: "React", jp: "反応", d: "Component systems for scalable state and interactive web apps.", i: "react", used: ["01", "02", "04"] },
+    { n: "Next.js", jp: "次", d: "SSR and static builds that index perfectly on Google and ship fast on Vercel.", i: "next", used: ["01"] },
+    { n: "Three.js", jp: "三次元", d: "WebGL scenes that turn static pages into immersive 3D worlds, optimized for 60fps mobile.", i: "three", used: ["02"] },
+    { n: "TypeScript", jp: "型", d: "Strong type contracts that eliminate production runtime bugs and safe data schemas.", i: "ts", used: ["01"] },
+    { n: "JavaScript", jp: "術", d: "Zero-dependency vanilla JS when 50ms initial paint matters more than framework overhead.", i: "js", used: ["03"] },
+    { n: "Node.js", jp: "根", d: "APIs, microservices, and serverless edge functions that keep backends running fast.", i: "node", used: [] },
+    { n: "Python", jp: "蛇", d: "Data processing, scraping, and automation scripts delivered with zero fuss.", i: "python", used: [] },
+    { n: "Motion", jp: "動", d: "Framer Motion and CSS physics that guide attention without causing layout shifts.", i: "motion", used: ["01", "04"] },
+    { n: "CSS Grid/Flex", jp: "様式", d: "Hand-crafted responsive layouts that look intentional on every viewport.", i: "css", used: ["01", "02", "03", "04"] }
   ];
   const sk = $("#skills");
   if (sk) {
