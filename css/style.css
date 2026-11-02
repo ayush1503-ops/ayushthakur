@@ -409,22 +409,27 @@ a { color: inherit; }
 .project__shot img {
   position: absolute; left: 0; right: 0; top: 30px; bottom: 0; width: 100%; height: calc(100% - 30px);
   object-fit: cover; object-position: top center;
-  filter: grayscale(1) contrast(1.15) brightness(1.02);
-  transition: filter .6s var(--ease), transform .8s var(--ease);
+  filter: contrast(1.02) brightness(1);
+  transition: filter .4s var(--ease), transform .6s var(--ease);
+  clip-path: none !important;
+  z-index: 1;
 }
-.project__shot::after { /* screentone overlay that lifts on hover */
-  content: ""; position: absolute; inset: 30px 0 0 0; z-index: 1;
-  background-image: radial-gradient(rgba(13,13,13,.4) 1px, transparent 1.3px);
+.project__shot::after { /* subtle manga screentone texture that lifts on hover */
+  content: ""; position: absolute; inset: 30px 0 0 0; z-index: 2;
+  background-image: radial-gradient(rgba(13,13,13,.15) 1px, transparent 1.3px);
   background-size: 5px 5px;
   mix-blend-mode: multiply;
-  transition: opacity .5s var(--ease);
+  pointer-events: none;
+  opacity: .3;
+  transition: opacity .3s var(--ease);
 }
-.project:hover .project__shot img { filter: grayscale(0) contrast(1) brightness(1); transform: scale(1.035); }
+.project:hover .project__shot img { filter: contrast(1.06) brightness(1.02); transform: scale(1.035); }
 .project:hover .project__shot::after { opacity: 0; }
 .project__shot .sfx {
   right: 14px; bottom: 6px; font-size: clamp(40px, 5vw, 72px);
   transform: rotate(-8deg) scale(.8); opacity: 0;
   transition: opacity .3s, transform .4s var(--ease);
+  z-index: 4;
 }
 .project:hover .project__shot .sfx { opacity: 1; transform: rotate(-8deg) scale(1); }
 .project__shot .peek {
